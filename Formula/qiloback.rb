@@ -17,41 +17,36 @@ class Qiloback < Formula
   desc "QiloBack CLI — declare a backend in YAML, ship a FastAPI + PostgreSQL stack."
   homepage "https://qiloback.dev"
   license "FSL-1.1-ALv2"
-  version "0.4.0"
+  version "0.3.3"
 
   on_macos do
     on_arm do
       url "https://github.com/delixon-labs/qiloback-core/releases/download/v#{version}/qiloback-cli-darwin-arm64"
-      # Replace with the SHA-256 from the release's SHA256SUMS.txt at publish time.
-      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+      sha256 ""
     end
-    on_intel do
-      url "https://github.com/delixon-labs/qiloback-core/releases/download/v#{version}/qiloback-cli-darwin-x64"
-      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
-    end
+    # Apple Silicon (arm64) is the only macOS architecture shipped via
+    # Homebrew. Intel Macs install via `pip install qiloback-cli` or the
+    # npm wrapper `npm install -g @qiloback/qiloback`.
   end
 
   on_linux do
     on_arm do
       url "https://github.com/delixon-labs/qiloback-core/releases/download/v#{version}/qiloback-cli-linux-arm64"
-      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+      sha256 ""
     end
     on_intel do
       url "https://github.com/delixon-labs/qiloback-core/releases/download/v#{version}/qiloback-cli-linux-x64"
-      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+      sha256 ""
     end
   end
 
   def install
-    # The release artefact is a single statically-linked binary.
-    # Install it as `qiloback` at $HOMEBREW_PREFIX/bin/qiloback.
     binary_name = case [OS.kernel_name, Hardware::CPU.arch]
                   when ["Darwin", :arm64]  then "qiloback-cli-darwin-arm64"
-                  when ["Darwin", :x86_64] then "qiloback-cli-darwin-x64"
                   when ["Linux", :arm64]   then "qiloback-cli-linux-arm64"
                   when ["Linux", :x86_64]  then "qiloback-cli-linux-x64"
                   else
-                    odie "QiloBack does not publish a binary for this platform yet."
+                    odie "QiloBack does not ship a Homebrew binary for this platform — install via `pip install qiloback-cli` or `npm install -g @qiloback/qiloback`."
                   end
     bin.install binary_name => "qiloback"
     # Convenience symlink so muscle-memory ``qb`` works too.
