@@ -21,7 +21,7 @@ class Qiloback < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/delixon-labs/qiloback-core/releases/download/v#{version}/qiloback-cli-darwin-arm64"
+      url "https://github.com/delixon-labs/delixon-qiloback/releases/download/v#{version}/qiloback-cli-darwin-arm64"
       sha256 "a22d58b48446b0182a23ce50f5ae83abe576a846c416fde4c2b2e82ab175a601"
     end
     # Apple Silicon (arm64) is the only macOS architecture shipped via
@@ -31,11 +31,11 @@ class Qiloback < Formula
 
   on_linux do
     on_arm do
-      url "https://github.com/delixon-labs/qiloback-core/releases/download/v#{version}/qiloback-cli-linux-arm64"
+      url "https://github.com/delixon-labs/delixon-qiloback/releases/download/v#{version}/qiloback-cli-linux-arm64"
       sha256 "839a6040ba6a3bb68e63a52dc710307fee1e9d5e6ecdeb32fa0e32f671c15e00"
     end
     on_intel do
-      url "https://github.com/delixon-labs/qiloback-core/releases/download/v#{version}/qiloback-cli-linux-x64"
+      url "https://github.com/delixon-labs/delixon-qiloback/releases/download/v#{version}/qiloback-cli-linux-x64"
       sha256 "f128753f561f3c25d3723cbe5a081e65215752db62543bfea49fc44691cf2e16"
     end
   end
