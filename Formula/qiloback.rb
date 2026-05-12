@@ -17,12 +17,12 @@ class Qiloback < Formula
   desc "QiloBack CLI — declare a backend in YAML, ship a FastAPI + PostgreSQL stack."
   homepage "https://qiloback.dev"
   license "FSL-1.1-ALv2"
-  version "0.3.3"
+  version "0.3.8"
 
   on_macos do
     on_arm do
       url "https://github.com/delixon-labs/delixon-qiloback/releases/download/v#{version}/qiloback-cli-darwin-arm64"
-      sha256 "a22d58b48446b0182a23ce50f5ae83abe576a846c416fde4c2b2e82ab175a601"
+      sha256 "83414911b1b7ee710a8dac58ce56be5bbb501f45f3778a7d25cd658defd195fe"
     end
     # Apple Silicon (arm64) is the only macOS architecture shipped via
     # Homebrew. Intel Macs install via `pip install qiloback-cli` or the
@@ -32,11 +32,11 @@ class Qiloback < Formula
   on_linux do
     on_arm do
       url "https://github.com/delixon-labs/delixon-qiloback/releases/download/v#{version}/qiloback-cli-linux-arm64"
-      sha256 "839a6040ba6a3bb68e63a52dc710307fee1e9d5e6ecdeb32fa0e32f671c15e00"
+      sha256 "df01e7f21def77115d4062bef250cebb5ecd965a8f4a309983b222675442e138"
     end
     on_intel do
       url "https://github.com/delixon-labs/delixon-qiloback/releases/download/v#{version}/qiloback-cli-linux-x64"
-      sha256 "f128753f561f3c25d3723cbe5a081e65215752db62543bfea49fc44691cf2e16"
+      sha256 "13683954e1bba84d827ec9dea4a3fb387666005543bb66c1ab38218df4fcfbe3"
     end
   end
 
